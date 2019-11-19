@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">unihospital</string>
+    <string name="index">http://unihospital.itforone.co.kr/bbs/board.php?bo_table=clinic</string>
+</resources>
