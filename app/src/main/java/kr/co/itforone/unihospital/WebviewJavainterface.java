@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.webkit.JavascriptInterface;
-import android.widget.Toast;
 
 class WebviewJavainterface {
 
@@ -25,5 +24,21 @@ class WebviewJavainterface {
           number = "tel:051-891-0088";
         mainActivity.startActivity(new Intent("android.intent.action.DIAL", Uri.parse(number)));
 
+    }
+    @JavascriptInterface
+    public void share(int idx) {
+        Intent intent = new Intent(android.content.Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, "hhttp://unihospital.itforone.co.kr/bbs/board.php?bo_table=clinic&wr_id="+idx);
+        Intent chooser = Intent.createChooser(intent, "공유하기");
+        mainActivity.startActivity(chooser);
+    }
+    @JavascriptInterface
+    public void share2(int idx) {
+        Intent intent = new Intent(android.content.Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, "hhttp://unihospital.itforone.co.kr/bbs/board.php?bo_table=event&wr_id="+idx);
+        Intent chooser = Intent.createChooser(intent, "공유하기");
+        mainActivity.startActivity(chooser);
     }
 }

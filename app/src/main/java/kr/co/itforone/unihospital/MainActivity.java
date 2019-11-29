@@ -1,9 +1,5 @@
 package kr.co.itforone.unihospital;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,19 +8,22 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
 public class MainActivity extends AppCompatActivity {
     @BindView(R.id.webview)    WebView webView;
     @BindView(R.id.refreshlayout)  SwipeRefreshLayout refreshlayout;
     private long backPrssedTime = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                         // Get new Instance ID token
                         String token = task.getResult().getToken();
                         // Log and toast
-                        Toast.makeText(MainActivity.this, token, Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(MainActivity.this, token, Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -55,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
         WebSettings settings = webView.getSettings();
         settings.setCacheMode(WebSettings.LOAD_DEFAULT);
         settings.setJavaScriptEnabled(true);
-
 
         refreshlayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -101,5 +99,4 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
 }
