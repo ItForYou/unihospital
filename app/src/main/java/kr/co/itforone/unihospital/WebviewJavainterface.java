@@ -29,7 +29,7 @@ class WebviewJavainterface {
     public void share(int idx) {
         Intent intent = new Intent(android.content.Intent.ACTION_SEND);
         intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_TEXT, "hhttp://unihospital.itforone.co.kr/bbs/board.php?bo_table=clinic&wr_id="+idx);
+        intent.putExtra(Intent.EXTRA_TEXT, "http://unihospital.itforone.co.kr/bbs/board.php?bo_table=clinic&wr_id="+idx);
         Intent chooser = Intent.createChooser(intent, "공유하기");
         mainActivity.startActivity(chooser);
     }
@@ -37,7 +37,7 @@ class WebviewJavainterface {
     public void share2(int idx) {
         Intent intent = new Intent(android.content.Intent.ACTION_SEND);
         intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_TEXT, "hhttp://unihospital.itforone.co.kr/bbs/board.php?bo_table=event&wr_id="+idx);
+        intent.putExtra(Intent.EXTRA_TEXT, "http://unihospital.itforone.co.kr/bbs/board.php?bo_table=event&wr_id="+idx);
         Intent chooser = Intent.createChooser(intent, "공유하기");
         mainActivity.startActivity(chooser);
     }
