@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">한닥</string>
     <string name="index">http://unihospital.itforone.co.kr/bbs/board.php?bo_table=clinic</string>
+    <string name="kakao_ad_track_id" translatable="false">7565683844257303886</string>
 </resources>

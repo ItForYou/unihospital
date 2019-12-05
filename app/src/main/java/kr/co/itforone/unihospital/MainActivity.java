@@ -16,6 +16,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
+import com.kakao.ad.common.json.CompleteRegistration;
+import com.kakao.ad.tracker.KakaoAdTracker;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,8 +32,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        if (!KakaoAdTracker.isInitialized()) {
+            KakaoAdTracker.getInstance().init(getApplicationContext(), getString(R.string.kakao_ad_track_id));
+        }
+
+        CompleteRegistration event = new CompleteRegistration();
+        event.tag = "Tag"; // 분류
+        KakaoAdTracker.getInstance().sendEvent(event);
+
         Intent splash = new Intent(MainActivity.this,SplashActivity.class);
         startActivity(splash);
+
+        webView.addJavascriptInterface(new WebviewJavainterface(this),"Android");
+        webView.setWebViewClient(new ClientManager(this));
+        webView.setWebChromeClient(new ChoromeManager(this, this));
+        WebSettings settings = webView.getSettings();
+        settings.setCacheMode(WebSettings.LOAD_DEFAULT);
+        settings.setJavaScriptEnabled(true);
 
         FirebaseInstanceId.getInstance().getInstanceId()
                 .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
@@ -43,17 +60,11 @@ public class MainActivity extends AppCompatActivity {
                         }
                         // Get new Instance ID token
                         String token = task.getResult().getToken();
+                        webView.loadUrl("javascript:set_token("+token+")");
                         // Log and toast
-//                        Toast.makeText(MainActivity.this, token, Toast.LENGTH_SHORT).show();
                     }
                 });
 
-        webView.addJavascriptInterface(new WebviewJavainterface(this),"Android");
-        webView.setWebViewClient(new ClientManager(this));
-        webView.setWebChromeClient(new ChoromeManager(this, this));
-        WebSettings settings = webView.getSettings();
-        settings.setCacheMode(WebSettings.LOAD_DEFAULT);
-        settings.setJavaScriptEnabled(true);
 
         refreshlayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
