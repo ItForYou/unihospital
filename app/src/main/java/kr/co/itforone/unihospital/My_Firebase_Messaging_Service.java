@@ -11,25 +11,38 @@ import android.graphics.BitmapFactory;
 import android.media.AudioAttributes;
 import android.os.Build;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.zoyi.channel.plugin.android.ChannelIO;
+
+import java.util.Map;
 
 public class My_Firebase_Messaging_Service extends FirebaseMessagingService {
     private static final String TAG = "MyFirebaseMsgService";
     @Override
     public void onNewToken(String s) {
         super.onNewToken(s);
-
+        ChannelIO.initPushToken(s);
+        Log.d("remote","Message:"+s);
     }
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-        if (remoteMessage.getData().size() > 0) {
-            if (remoteMessage != null && remoteMessage.getData().size() > 0) {
-                sendNotification(remoteMessage);
+        Map<String, String> pushMessage = remoteMessage.getData();
+
+        if (ChannelIO.isChannelPushNotification(pushMessage)) {
+            ChannelIO.showPushNotification(getApplication(), pushMessage);
+        }
+        else {
+            if(remoteMessage.getData().size() > 0) {
+
+                if (remoteMessage != null && remoteMessage.getData().size() > 0) {
+                    sendNotification(remoteMessage);
+                }
             }
         }
     }

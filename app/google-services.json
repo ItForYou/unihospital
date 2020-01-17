@@ -8,6 +8,50 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:748525500524:android:8e76b327be9488855d4049",
+        "android_client_info": {
+          "package_name": "co.kr.itforone.dreamrun"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "748525500524-e3jejivucdgvp86m5diqnpidd6al194v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.kr.itforone.dreamrun",
+            "certificate_hash": "fa9657941484e644a70bbf4492602012dfcf85f2"
+          }
+        },
+        {
+          "client_id": "748525500524-9d73q1769i18tfke7c6bpbgd0p1eenlk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAitmbGicbzk3M1R4jje4Tet80BW3g_Q78"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "748525500524-9d73q1769i18tfke7c6bpbgd0p1eenlk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "748525500524-h503l0mk2ea4s18aimc1ojdulfc4ggr7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "kr.co.itforone.unihospital"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:748525500524:android:310381b946b8f3195d4049",
         "android_client_info": {
           "package_name": "co.kr.itforone.namoint"
@@ -40,10 +84,10 @@
               "client_type": 3
             },
             {
-              "client_id": "748525500524-6n9ul8da5abg7oh11m8tj5f0so7d8705.apps.googleusercontent.com",
+              "client_id": "748525500524-h503l0mk2ea4s18aimc1ojdulfc4ggr7.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "co.kr.itforone.namoint2"
+                "bundle_id": "kr.co.itforone.unihospital"
               }
             }
           ]
@@ -92,10 +136,10 @@
               "client_type": 3
             },
             {
-              "client_id": "748525500524-6n9ul8da5abg7oh11m8tj5f0so7d8705.apps.googleusercontent.com",
+              "client_id": "748525500524-h503l0mk2ea4s18aimc1ojdulfc4ggr7.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "co.kr.itforone.namoint2"
+                "bundle_id": "kr.co.itforone.unihospital"
               }
             }
           ]
@@ -144,10 +188,10 @@
               "client_type": 3
             },
             {
-              "client_id": "748525500524-6n9ul8da5abg7oh11m8tj5f0so7d8705.apps.googleusercontent.com",
+              "client_id": "748525500524-h503l0mk2ea4s18aimc1ojdulfc4ggr7.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "co.kr.itforone.namoint2"
+                "bundle_id": "kr.co.itforone.unihospital"
               }
             }
           ]
@@ -156,14 +200,14 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:748525500524:android:466f4f512ae4cae05d4049",
+        "mobilesdk_app_id": "1:748525500524:android:102d60e5e654a7775d4049",
         "android_client_info": {
           "package_name": "kr.co.itforone.unihospital"
         }
       },
       "oauth_client": [
         {
-          "client_id": "748525500524-99u794umrm6b04akp9oaj206djqu9spp.apps.googleusercontent.com",
+          "client_id": "748525500524-erf09iomo5qqt49fkuf3l3flejt5h3b3.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "kr.co.itforone.unihospital",
@@ -188,10 +232,10 @@
               "client_type": 3
             },
             {
-              "client_id": "748525500524-6n9ul8da5abg7oh11m8tj5f0so7d8705.apps.googleusercontent.com",
+              "client_id": "748525500524-h503l0mk2ea4s18aimc1ojdulfc4ggr7.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "co.kr.itforone.namoint2"
+                "bundle_id": "kr.co.itforone.unihospital"
               }
             }
           ]

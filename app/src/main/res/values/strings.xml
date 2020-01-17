@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">한닥</string>
     <string name="index">http://unihospital.itforone.co.kr/bbs/board.php?bo_table=clinic</string>
+    <string name="realindex">http://unihospital.itforone.co.kr/</string>
     <string name="kakao_ad_track_id" translatable="false">7565683844257303886</string>
+    <string name="facebook_app_id" translatable="false">276668693267145</string>
+    <string name="notification_title">채널톡</string>
 </resources>

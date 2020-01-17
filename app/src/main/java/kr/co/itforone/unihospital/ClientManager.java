@@ -3,6 +3,11 @@ package kr.co.itforone.unihospital;
 import android.app.Activity;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
+
+import com.zoyi.channel.plugin.android.ChannelIO;
+import com.zoyi.channel.plugin.android.ChannelPluginCompletionStatus;
+import com.zoyi.channel.plugin.android.ChannelPluginSettings;
 
 class ClientManager extends WebViewClient {
     Activity activity;
@@ -17,8 +22,13 @@ class ClientManager extends WebViewClient {
 
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
+        if(url.contains("test_chenneltalk.php")){
+            mainActivity.openChannel();
+        }
 
-        view.loadUrl(url);
+        else {
+            view.loadUrl(url);
+        }
         return true;
     }
 }

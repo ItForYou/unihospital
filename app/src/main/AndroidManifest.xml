@@ -7,26 +7,35 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
-        <meta-data
-            android:name="firebase_messaging_auto_init_enabled"
-            android:value="false" />
-        <meta-data
-            android:name="firebase_analytics_collection_enabled"
-            android:value="false" />
+<!--        <meta-data-->
+<!--            android:name="firebase_messaging_auto_init_enabled"-->
+<!--            android:value="false" />-->
+<!--        <meta-data-->
+<!--            android:name="firebase_analytics_collection_enabled"-->
+<!--            android:value="false" />-->
         <meta-data
             android:name="com.kakao.ad.tracker.TRACK_ID"
             android:value="@string/kakao_ad_track_id" />
-        <service android:name=".My_Firebase_Messaging_Service">
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+
+        <provider android:authorities="com.facebook.app.FacebookContentProvider276668693267145"
+            android:name="com.facebook.FacebookContentProvider"
+            android:exported="true" />
+
+        <service
+            android:name=".My_Firebase_Messaging_Service"
+            >
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
         <receiver
             android:name="com.kakao.ad.tracker.KakaoAdInstallReferrerReceiver"
             android:exported="true">
@@ -52,7 +61,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".SplashActivity">
-        </activity>
+    </activity>
+
     </application>
 
 </manifest>
